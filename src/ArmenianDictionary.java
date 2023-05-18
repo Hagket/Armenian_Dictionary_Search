@@ -984,16 +984,30 @@ public class ArmenianDictionary {
 
     public void getResponse(String input) {
         input = input.trim();
+        int hyphenCount = 0;
+        for (int i = 0; i < input.length(); i++) {
+            if (input.charAt(i) == '-') {
+                hyphenCount++;
+            }
+        }
+        // Errors
         if (input.length() == 0) {
             System.out.println("\nPlease specify what you would like to search\n");
-        }
-        else if (input.equals("# of words")) {
-            wordCount();
         }
         else if (!(input.endsWith("-")) && input.charAt(0) != '-'){
             System.out.println("\nMake sure you use \"-\" before or after your search.");
         }
-
+        else if (input.endsWith("-") && input.charAt(0) == '-') {
+            //wordSearch(input);
+            System.out.println("\nMake sure you only use 1 \"-\" in your search.");
+        }
+        else if (hyphenCount > 1) {
+            System.out.println("\nMake sure you only use 1 \"-\" in your search.");
+        }
+        // Functions
+        else if (input.equals("# of words")) {
+            wordCount();
+        }
         else if (input.charAt(0) == '-') {
             endSearch(input);
         }
@@ -1033,6 +1047,11 @@ public class ArmenianDictionary {
             System.out.println("\nEither there are no words in this program that match your " +
                     "search case or the program made a mistake. Please try again.");
         }
+    }
+
+    private void wordSearch(String searchTerm) {
+        // This method should search for a word but we cant use binary search and linear search
+        // would take way too long to complete the task.
     }
 
     private void wordCount() {
