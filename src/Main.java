@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        System.out.println("Adding words to program...\n");
+        //System.out.println("Adding words to program...");
         ArmenianDictionary armodict = new ArmenianDictionary();
 
         System.out.println("\nWelcome to Armenian Dictionary Search.");
