@@ -1,5 +1,6 @@
 import stdlib.StdIn;
 import java.util.ArrayList;
+import java.util.*;
 
 public class ArmenianDictionary {
     private int wordsFound;
@@ -990,7 +991,7 @@ public class ArmenianDictionary {
                 hyphenCount++;
             }
         }
-        // Errors
+        // Error Responses
         if (input.length() == 0) {
             System.out.println("\nPlease specify what you would like to search\n");
         }
@@ -1018,8 +1019,10 @@ public class ArmenianDictionary {
 
     private void forwardSearch(String searchTerm) {
         wordsFound = 0;
-
+        searchTerm = searchTerm.toLowerCase();
+        
         for (String term : armenianWords) {
+            term = term.toLowerCase();
             if (searchTerm.length()-1 < term.length() && term.substring(0,
                     searchTerm.length()-1).equals(searchTerm.substring(0, searchTerm.length()-1))) {
                 System.out.println(term);
@@ -1035,8 +1038,10 @@ public class ArmenianDictionary {
 
     private void endSearch(String searchTerm) {
         wordsFound = 0;
-
+        searchTerm = searchTerm.toLowerCase();
+        
         for (String term : armenianWords) {
+            term = term.toLowerCase();
             if (searchTerm.length()-1 < term.length() && term.substring(term.length() - (searchTerm.length()-1)).equals(searchTerm.substring(1))) {
                 System.out.println(term);
                 wordsFound++;
@@ -1050,8 +1055,7 @@ public class ArmenianDictionary {
     }
 
     private void wordSearch(String searchTerm) {
-        // This method should search for a word but we cant use binary search and linear search
-        // would take way too long to complete the task.
+        // This method should search for a word but we cant use binary search and linear search would take way too long to complete the task.
     }
 
     private void wordCount() {
