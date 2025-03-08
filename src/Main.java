@@ -1,9 +1,9 @@
 /*
 Armenian Dictionary Search using Java
 Made by Hagop Ketchedjian
-Version 1.1
+Version 1.2
 Original Creation Date: November 2021
-Last Update: May 2023
+Last Update: March 2025
 */
 
 import java.util.Scanner;
